@@ -41,6 +41,7 @@ public class AuthManager extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/users/register").permitAll()
                 .antMatchers("/users/auth").permitAll()
+                .antMatchers("/h2-console/*").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
