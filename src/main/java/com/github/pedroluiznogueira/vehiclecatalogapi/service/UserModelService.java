@@ -3,6 +3,7 @@ package com.github.pedroluiznogueira.vehiclecatalogapi.service;
 import com.github.pedroluiznogueira.vehiclecatalogapi.dto.UserDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.model.User;
 import com.github.pedroluiznogueira.vehiclecatalogapi.repository.UserRepository;
+import com.github.pedroluiznogueira.vehiclecatalogapi.security.service.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
