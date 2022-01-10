@@ -1,8 +1,6 @@
 package com.github.pedroluiznogueira.vehiclecatalogapi.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -20,6 +18,7 @@ public class User implements UserDetails {
     private String name;
     private String email;
     private String password;
+    private Boolean isAdmin;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
