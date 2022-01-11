@@ -1,5 +1,6 @@
 package com.github.pedroluiznogueira.vehiclecatalogapi.controller;
 
+import com.github.pedroluiznogueira.vehiclecatalogapi.dto.AuthDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.dto.TokenDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.dto.UserDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.model.User;
@@ -27,10 +28,10 @@ public class UserController {
 
     @PostMapping("/auth")
     public ResponseEntity<TokenDto> auth(@RequestBody UserDto user) throws InterruptedException {
-        String token = userModelService.auth(user);
-        if (token == null) return new ResponseEntity("invalid email or password", HttpStatus.BAD_REQUEST);
+        AuthDto auth = userModelService.auth(user);
+        if (auth == null) return new ResponseEntity("invalid email or password", HttpStatus.BAD_REQUEST);
 
-        return ResponseEntity.ok(TokenDto.builder().type("Bearer").token(token).build());
+        return new ResponseEntity(auth, HttpStatus.OK);
     }
 
     @GetMapping("/find/by/name/{name}")

@@ -1,11 +1,11 @@
 package com.github.pedroluiznogueira.vehiclecatalogapi.service;
 
+import com.github.pedroluiznogueira.vehiclecatalogapi.dto.AuthDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.dto.UserDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.model.User;
 import com.github.pedroluiznogueira.vehiclecatalogapi.repository.UserRepository;
 import com.github.pedroluiznogueira.vehiclecatalogapi.security.service.TokenService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -30,12 +30,21 @@ public class UserModelService {
         return new UserDto(user.getEmail(), user.getPassword());
     }
 
-    public String auth(UserDto user) throws InterruptedException {
+    public AuthDto auth(UserDto user) throws InterruptedException {
         UsernamePasswordAuthenticationToken loginCredentials = new UsernamePasswordAuthenticationToken(user.getEmail(),user.getPassword());
         Authentication authentication = authenticationManager.authenticate(loginCredentials);
         Thread.sleep(3000);
         if (!authentication.isAuthenticated()) return null;
-        return tokenService.generateToken(authentication);
+        String token = tokenService.generateToken(authentication);
+        User resp = userRepository.findUserByEmail(user.getEmail());
+        return AuthDto
+                .builder()
+                .type("Bearer")
+                .token(token)
+                .userId(resp.getId())
+                .isAdmin(resp.getIsAdmin())
+                .build();
+
     }
 
     public User findUserByName(String name) {
