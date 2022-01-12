@@ -35,6 +35,7 @@ public class VehicleService {
         resp.setBrand(vehicle.getBrand());
         resp.setModel(vehicle.getModel());
         resp.setImagePath(vehicle.getImagePath());
+        resp.setPrice(vehicle.getPrice());
 
         return vehicleRepository.save(resp);
     }
