@@ -42,6 +42,7 @@ public class AuthManager extends WebSecurityConfigurerAdapter {
                 .antMatchers("/users/register").permitAll()
                 .antMatchers("/users/auth").permitAll()
                 .antMatchers("/upload-file").permitAll()
+                .antMatchers("/vehicles/find/all").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
