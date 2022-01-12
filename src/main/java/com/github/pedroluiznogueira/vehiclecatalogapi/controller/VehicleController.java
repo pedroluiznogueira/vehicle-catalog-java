@@ -43,7 +43,7 @@ public class VehicleController {
 
     @PutMapping("/update/{id}/user/{userId}")
     public ResponseEntity<Vehicle> update(@PathVariable ("id") Integer id, @PathVariable ("userId") Integer userId, @RequestBody Vehicle vehicle) {
-
+        System.out.println("ok");
         User user = userRepository.findById(userId).get();
         if (user.getIsAdmin() == false) return new ResponseEntity("only admin users can access this end-point", HttpStatus.BAD_REQUEST);
 
@@ -55,7 +55,6 @@ public class VehicleController {
 
     @DeleteMapping("/delete/{id}/user/{userId}")
     public ResponseEntity<String> delete(@PathVariable ("id") Integer id, @PathVariable ("userId") Integer userId) {
-
         User user = userRepository.findById(userId).get();
         if (user.getIsAdmin() == false) return new ResponseEntity("only admin users can access this end-point", HttpStatus.BAD_REQUEST);
 
