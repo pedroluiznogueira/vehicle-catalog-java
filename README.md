@@ -3,7 +3,7 @@
 <h2>Sumário desta Documentação</h2>
 <ul>
   <li><a href="#rodando">Rodando o projeto na sua máquina</a></li>
-  <li><a href="#config">Configurões de banco de dados</a></li>
+  <li><a href="#config">Configurões do banco de dados</a></li>
   <li><a href="#rel">Acessando o projeto como administrador</a></li>
   <li><a href="#doc">Documentação da API com Swagger UI</a></li>
   <li><a href="#contr">Como contribuir</a></li>
@@ -28,7 +28,9 @@
 -> A branch <b>release/v.1.1</b> está configurada para rodar com um banco h2 em memória <br>
 -> Quando o projeto é iniciado alguns dados já são persistidos por meio de um script <br>
 -> É necessário fazer registro de usuário e login <br>
-  
+
+<div id="config"><div>
+    
 ## Acessando o projeto como administrador
   
 1. Se registre como qualquer <b>email</b> e <b>password</b>, mas no campo <b>name</b> é necessário escrever <b>admin</b><br>
