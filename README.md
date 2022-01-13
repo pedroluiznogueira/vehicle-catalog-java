@@ -15,7 +15,7 @@
   
 ## Pipeline
 
-- Caso queira acessar o a branch de produção do projeto, acesse a branch <a href="https://github.com/pedroluiznogueira/vehicle-catalog-java/tree/master">master</a>
+- Caso queira acessar a branch de produção do projeto, acesse a branch <a href="https://github.com/pedroluiznogueira/vehicle-catalog-java/tree/master">master</a>
 - Ela está configurada com o pipeline para fazer deploy contínuo
 - A branch utilizada em desenvolvimento contínuo é a branch <a href="https://github.com/pedroluiznogueira/vehicle-catalog-java/tree/developer">developer</a> 
 <hr>
