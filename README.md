@@ -2,12 +2,22 @@
 <hr>
 <h2>Sumário desta Documentação</h2>
 <ul>
+  <li><a href="#pipeline">Pipeline</a></li>
   <li><a href="#rodando">Rodando o projeto na sua máquina</a></li>
   <li><a href="#config">Configurões do banco de dados</a></li>
   <li><a href="#rel">Acessando o projeto como administrador</a></li>
   <li><a href="#doc">Documentação da API com Swagger UI</a></li>
   <li><a href="#contr">Como contribuir</a></li>
 </ul>
+<hr>
+
+<div id="pipeline"><div>
+  
+## Pipeline
+
+- Caso queira acessar o a branch de produção do projeto, acesse a branch <a href="https://github.com/pedroluiznogueira/vehicle-catalog-java/tree/master">master</a>
+- Ela está configurada com o pipeline para fazer deploy contínuo
+- A branch utilizada em desenvolvimento contínuo é a branch <a href="https://github.com/pedroluiznogueira/vehicle-catalog-java/tree/developer">developer</a> 
 <hr>
 
 <div id="rodando"><div>
