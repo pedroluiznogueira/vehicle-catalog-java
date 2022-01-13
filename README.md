@@ -3,12 +3,25 @@
 <h2>Sumário desta Documentação</h2>
 <ul>
   <li><a href="#pipeline">Pipeline</a></li>
+  <li><a href="#docker">Rodando o projeto com Docker</a></li>
   <li><a href="#rodando">Rodando o projeto na sua máquina</a></li>
   <li><a href="#config">Configurões do banco de dados</a></li>
   <li><a href="#rel">Acessando o projeto como administrador</a></li>
   <li><a href="#doc">Documentação da API com Swagger UI</a></li>
   <li><a href="#contr">Como contribuir</a></li>
 </ul>
+<hr>
+
+<div id="docker"><div>
+  
+## Rodando o projeto com Docker é a forma que eu recomendo
+  
+  1. <b>docker pull pedroluiznogueira/vehicle-catalog-api:0.0.2-SNAPSHOT</b>
+  2. <b>docker run -p 8080:8080 pedroluiznogueira/vehicle-catalog-api:0.0.2-SNAPSHOT</b>
+  4. Abra outro <b>terminal</b>
+  3. <b>docker ps</b>, a imagem do projeto estará rodando em um container
+  4. Em seu browser acesse <b>http://localhost:8080/swagger-ui.html</b>
+  5. Se a interface do Swagger com a documentação da API aparecer, tudo ocorreu bem e o projeto está pronto para uso local
 <hr>
 
 <div id="pipeline"><div>
