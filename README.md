@@ -29,7 +29,7 @@
 -> Quando o projeto é iniciado alguns dados já são persistidos por meio de um script <br>
 -> É necessário fazer registro de usuário e login <br>
 
-<div id="config"><div>
+<div id="rel"><div>
     
 ## Acessando o projeto como administrador
   
