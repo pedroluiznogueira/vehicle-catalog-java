@@ -30,6 +30,10 @@ public class AuthManager extends WebSecurityConfigurerAdapter {
     private AuthProvider userDetailsService;
 
     private static final String[] AUTH_WHITELIST = {
+            // Actuator
+            "/actuator",
+            "/actuator/health",
+            "/actuator/**",
             // -- Swagger UI v2
             "/v2/api-docs",
             "/swagger-resources",
