@@ -54,6 +54,10 @@ public class UserModelService {
         return user;
     }
 
+    public User findUserById(Integer id) {
+        return userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("no user with the given id"));
+    }
+
     public User findUserByEmail(String email) {
         User user = userRepository.findUserByEmail(email);
         if (user == null) return null;
