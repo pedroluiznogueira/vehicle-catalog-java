@@ -6,10 +6,12 @@ import com.github.pedroluiznogueira.vehiclecatalogapi.dto.UserDto;
 import com.github.pedroluiznogueira.vehiclecatalogapi.model.User;
 import com.github.pedroluiznogueira.vehiclecatalogapi.service.UserModelService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
+@Slf4j
 @RestController
 @RequestMapping("/users")
 @CrossOrigin("*")
@@ -38,6 +40,15 @@ public class UserController {
     public ResponseEntity<User> findUserByName(@PathVariable ("name") String name) {
         User user = userModelService.findUserByName(name);
         if (user == null) return new ResponseEntity("there's no user with the given name", HttpStatus.BAD_REQUEST);
+
+        return new ResponseEntity(user, HttpStatus.OK);
+    }
+
+    @GetMapping("/find/by/id/{id}")
+    public ResponseEntity<User> findUserById(@PathVariable ("id") Integer id) {
+        log.info("find by id request received");
+        User user = userModelService.findUserById(id);
+        if (user == null) return new ResponseEntity("there's no user with the given id", HttpStatus.BAD_REQUEST);
 
         return new ResponseEntity(user, HttpStatus.OK);
     }
